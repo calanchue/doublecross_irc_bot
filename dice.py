@@ -45,6 +45,7 @@ def complexDice(string):
     m = scan.match()
     while m:
         value = repr(m.group(m.lastindex)).strip("'")
+        print value
         if m.lastindex == 1:
             die['repeat'] *= int(value[:-1])
         elif m.lastindex == 4:
