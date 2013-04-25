@@ -11,7 +11,7 @@ class IRCLogger(irc.IRCClient):
     nickname = 'dice_bot'
 
     def signedOn(self):
-        self.join('#dice_test')
+        self.join('#13dx')
         
     def joined(self, channel):
         """This will get called when the bot joins the channel."""
@@ -33,7 +33,7 @@ class IRCLogger(irc.IRCClient):
 def main():
     f = protocol.ReconnectingClientFactory()
     f.protocol = IRCLogger
-    reactor.connectTCP('irc.hanirc.org', 6667, f)
+    reactor.connectTCP('apink.hanirc.org', 6667, f)
     reactor.run()
 
 if __name__ == '__main__':
