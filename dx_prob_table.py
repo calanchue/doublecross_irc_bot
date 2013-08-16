@@ -70,7 +70,42 @@ def show_prob_table():
             #cri_dice_table[cri_ceiling][num_dice] = CaseStat(total, occ_val)
             #print CaseStat(total,occ_val),
         print ''
+
+def versus(dice1, cri1, mod1, dice2, cri2, mod2):
+    TRY = 10000
+    
+    win1 = 0
+    win2 = 0
+    for i in xrange(TRY) :
+        value1 = roll2dx(dice1, cri1) + mod1
+        value2 = roll2dx(dice2, cri2) + mod2
+        if(value1 > value2):
+            win1 += 1
+        else :
+            win2 += 1
+    win_per = win1 / 10000.0
+    print win_per,
+        
+
+def versus_sample1():
+    for j in xrange(10) :
+       versus(7,7,j,7,7,0)
+
+def versus_sample2():
+    for j in xrange(10) :
+       versus(10+j,7,0,10,7,0)            
+
+def versus_sample3():
+    for j in xrange(10) :
+       versus(7,7,j,7,10,0)
+
+def versus_sample4():
+    for i in xrange(10) :
+        for j in xrange(10) :
+            versus(5+i,10,2+j,0,11,15)
+        print        
     
 
 if __name__ == '__main__':
-    show_prob_table()
+    versus_sample4()
+    #show_prob_table()
