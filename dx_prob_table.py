@@ -104,8 +104,12 @@ def versus_sample4():
         for j in xrange(10) :
             versus(5+i,10,2+j,0,11,15)
         print        
+
+def versus_sample5():
+    for i in xrange(10) :
+        versus(7,7,5,0,11,10*i)
     
 
 if __name__ == '__main__':
-    versus_sample4()
+    versus_sample5()
     #show_prob_table()
